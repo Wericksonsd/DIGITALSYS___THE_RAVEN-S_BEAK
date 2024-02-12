@@ -49,6 +49,75 @@
     margin: 45px;
     display: grid;
     grid-template-areas:
-    "imgPer "
+    "imgP nome nome"
+    "imgP nome nome"
+    "imgP nivel nivel"
+    "imgP status status"
+    "imgP status status"
+    "imgP back back"
+    "imgP back back"
+    "imgP back back"
+    "imgP back back"
+    "imgP back back"
     ;
+}
+
+#imgPer{
+    grid-area: imgP;
+    background-color: aquamarine;
+}
+
+.infosPer{
+    grid-area: nome;
+    display: flex;
+    align-items: stretch;
+}
+
+.infosPerNome{
+    flex: 1;
+    background-color: rgb(75, 10, 8);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#origemPer{
+    width: 40px;
+    background-color: brown;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 8px;
+}
+
+.nivelPerDiv{
+    grid-area: nivel;
+    background-color: bisque;
+}
+
+.statusPer{
+    grid-area: status;
+    background-color: blueviolet;
+}
+
+.adicionalPer{
+    grid-area: back;
+    display: flex;
+    align-items: stretch;
+}
+
+#historiaPer{
+    flex: 1;
+    background-color: rgb(42, 42, 122);
+    padding: 5px;
+    text-align: center;
+}
+
+.atributosPer{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-width: 25px;
+    text-align: center;
+    background-color: chocolate;
 }

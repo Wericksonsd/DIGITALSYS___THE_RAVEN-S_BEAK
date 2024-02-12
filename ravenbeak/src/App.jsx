@@ -6,7 +6,7 @@ function App() {
   return(
     <>
       <Header/>
-      <Grupo/>
+      <Grupo nome="Nosk" raca="Humano" classe="Guerreiro" origem={1} />
     </>
   );
 
