@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Grunda from './assets/brasoesOrigem/Grunda.svg'
 import Lavari from './assets/brasoesOrigem/Lavari.svg'
 import Termina from './assets/brasoesOrigem/Termina.svg'
-import Viento from './assets/brasoesOrigem/Viento.svg'
+import Viento from './assets/brasoesOrigem/Vientto.svg'
 import Volttan from './assets/brasoesOrigem/Volttan.svg'
 
 function Grupo(props){
@@ -11,7 +11,7 @@ function Grupo(props){
     const [nome, setNome] = useState(props.nome);
     const [raca, setRaca] = useState(props.raca);
     const [classe, setClasse] = useState(props.classe);
-    const [origem,setOrigem] = useState(props.origem);
+    const [origem,setOrigem] = useState(origemPersonagem(props.origem));
     const [nivelPer, setNivelPer] = useState(props.nivel);
     const [vidaPer, setVidaPer] = useState(props.vida);
     const [defesaPer, setDefesaPer] = useState(props.def);
@@ -23,18 +23,43 @@ function Grupo(props){
     const [atrSaber, setAtrSaber] = useState(props.s);    
     const [dinPer, setDinPer] = useState(0);
 
-    function origemPersonagem(){
-        let orgp = document.getElementById("origemPer");
+    function origemPersonagem(i) {
+        //let orgp = document.getElementById("origemPer");
 
-        switch(props.origem){
+        let orgp;
+
+        switch(i){
 
             case 1:
-                orgp.src = '{Grunda}';
+                orgp = Grunda;
             break;
 
             case 2:
-                orgp.src = '{Lavari}'
+                orgp = Lavari;
+            break;
+
+            case 3:
+                orgp = Termina;
+            break;
+
+            case 4:
+                orgp = Viento;
+            break;
+
+            case 5:
+                orgp = Volttan;
+            break;
+
+            default:
+                orgp = Grunda;
+            break;
         }
+
+        return orgp;
+    }
+
+    function nivelPersonagem(i){
+        
     }
 
     function setAtributos (){
@@ -50,7 +75,7 @@ function Grupo(props){
                     <h4 id='racaPer'>{raca}</h4>
                     <h4 id='classePer'>{classe}</h4>
                 </div>
-                <img id='origemPer' src={Grunda} alt="origem personagem"/>
+                <img id='origemPer' src={origem} alt="origem personagem"/>
             </div>            
             <div className='nivelPerDiv'>
                 <img src="" alt="niveis" />
