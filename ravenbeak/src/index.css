@@ -42,9 +42,16 @@
 
 /*///////////////////// GRUPO /////////////////////*/
 
+.mainGrupo{
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 #cardPer{
     width: 320px;
-    height: 350px;
+    height: 390px;
     background-color: blue;
     margin: 45px;
     display: grid;
@@ -92,7 +99,12 @@
 
 .nivelPerDiv{
     grid-area: nivel;
+    color: rgb(228, 151, 35);
+    letter-spacing: 0.3em;
     background-color: bisque;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .statusPer{
@@ -117,7 +129,7 @@
     display:flex;
     flex-direction: column;
     justify-content: space-around;
-    min-width: 25px;
+    min-width: 40px;
     text-align: center;
     background-color: chocolate;
 }

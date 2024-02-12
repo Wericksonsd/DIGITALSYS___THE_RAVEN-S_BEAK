@@ -4,6 +4,7 @@ import Lavari from './assets/brasoesOrigem/Lavari.svg'
 import Termina from './assets/brasoesOrigem/Termina.svg'
 import Viento from './assets/brasoesOrigem/Vientto.svg'
 import Volttan from './assets/brasoesOrigem/Volttan.svg'
+import Unknown from './assets/brasoesOrigem/Unknown.svg'
 
 function Grupo(props){
 
@@ -12,7 +13,7 @@ function Grupo(props){
     const [raca, setRaca] = useState(props.raca);
     const [classe, setClasse] = useState(props.classe);
     const [origem,setOrigem] = useState(origemPersonagem(props.origem));
-    const [nivelPer, setNivelPer] = useState(props.nivel);
+    const [nivelPer, setNivelPer] = useState(nivelPersonagem(props.nivel));
     const [vidaPer, setVidaPer] = useState(props.vida);
     const [defesaPer, setDefesaPer] = useState(props.def);
     const [manaPer, setManaPer] = useState(props.mana);
@@ -24,7 +25,6 @@ function Grupo(props){
     const [dinPer, setDinPer] = useState(0);
 
     function origemPersonagem(i) {
-        //let orgp = document.getElementById("origemPer");
 
         let orgp;
 
@@ -51,7 +51,7 @@ function Grupo(props){
             break;
 
             default:
-                orgp = Grunda;
+                orgp = Unknown;
             break;
         }
 
@@ -59,7 +59,19 @@ function Grupo(props){
     }
 
     function nivelPersonagem(i){
+
+        let nivelpp = ""
         
+        for (let j = 0; j < 5; j++){
+            if (i > 0){
+                nivelpp = nivelpp + '★'
+            } else {
+                nivelpp = nivelpp + '☆'
+            }
+            i--
+        }
+
+        return nivelpp
     }
 
     function setAtributos (){
@@ -78,7 +90,7 @@ function Grupo(props){
                 <img id='origemPer' src={origem} alt="origem personagem"/>
             </div>            
             <div className='nivelPerDiv'>
-                <img src="" alt="niveis" />
+                <h2> {nivelPer} </h2>
             </div>
             <div className='statusPer'>
                 <img src="" alt="hp" />
