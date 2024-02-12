@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+/*///////////////////// HEADER /////////////////////*/
+
+.headerr{
+    height: 20vh;
+    width: 100vw;
+    background-image: url(assets/masmorraTijolo.png);
+    background-size: contain;
+    display: flex;
+}
+
+.brasao{
+    width: 25vw;
+    background-color: blueviolet;
+}
