@@ -38,3 +38,17 @@
     cursor: pointer;
     color: rgb(215, 216, 216);
 }
+
+
+/*///////////////////// GRUPO /////////////////////*/
+
+#cardPer{
+    width: 320px;
+    height: 350px;
+    background-color: blue;
+    margin: 45px;
+    display: grid;
+    grid-template-areas:
+    "imgPer "
+    ;
+}
