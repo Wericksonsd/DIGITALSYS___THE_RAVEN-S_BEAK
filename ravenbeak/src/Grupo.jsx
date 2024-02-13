@@ -13,21 +13,37 @@ import Paladino from './assets/Personagens/Paladino.svg'
 function Grupo(props){
 
     const [personagem, setPersonagem] = useState([]);    
-    const [imgP, setImgP] = useState(imagemPersonagem(props.imgPer));
-    const [nome, setNome] = useState(props.nome);
-    const [raca, setRaca] = useState(props.raca);
-    const [classe, setClasse] = useState(props.classe);
-    const [origem,setOrigem] = useState(origemPersonagem(props.origem));
-    const [nivelPer, setNivelPer] = useState(nivelPersonagem(props.nivel));
-    const [vidaPer, setVidaPer] = useState(props.vida);
-    const [defesaPer, setDefesaPer] = useState(props.def);
-    const [manaPer, setManaPer] = useState(props.mana);
-    const [historiaPers, setHistoriaPer] = useState(props.historia);    
-    const [atrConst, setAtrConst] = useState(props.c);
-    const [atrForca, setAtrForca] = useState(props.f);
-    const [atrAgilidade, setAtrAgilidade] = useState(props.a);
-    const [atrSaber, setAtrSaber] = useState(props.s);    
-    const [dinPer, setDinPer] = useState(0);
+    const [imgP, setImgP] = useState();
+    const [nome, setNome] = useState();
+    const [raca, setRaca] = useState();
+    const [classe, setClasse] = useState();
+    const [origem,setOrigem] = useState();
+    const [nivelPer, setNivelPer] = useState();
+    const [vidaPer, setVidaPer] = useState();
+    const [defesaPer, setDefesaPer] = useState();
+    const [manaPer, setManaPer] = useState();
+    const [historiaPers, setHistoriaPer] = useState();    
+    const [atrConst, setAtrConst] = useState();
+    const [atrForca, setAtrForca] = useState();
+    const [atrAgilidade, setAtrAgilidade] = useState();
+    const [atrSaber, setAtrSaber] = useState();
+
+    const atualizarPer = () => {
+        setImgP (imagemPersonagem(props.imgPer));
+        setNome (props.nome);
+        setRaca (props.raca);
+        setClasse (props.classe);
+        setOrigem (origemPersonagem(props.origem));
+        setNivelPer (nivelPersonagem(props.nivel));
+        setVidaPer (props.vida);
+        setDefesaPer (props.def);
+        setManaPer (props.mana);
+        setHistoriaPer (props.historia);
+        setAtrConst (props.c);
+        setAtrForca (props.f);
+        setAtrAgilidade (props.a);
+        setAtrSaber (props.s);
+    }
 
     function imagemPersonagem(i) {
 
@@ -108,28 +124,36 @@ function Grupo(props){
         return nivelpp
     }
 
-    function setAtributos (){
-
-    }
+    const 
 
     return (
         <div id='cardPer'>
             <img id='imgPer' src={imgP} alt="personagem" />
             <div className='infosPer'>
                 <div className='infosPerNome'>
-                    <h1 id='nomePer'>{nome}</h1>
-                    <h4 id='racaPer'>{raca}</h4>
-                    <h4 id='classePer'>{classe}</h4>
+                    <span>
+                        <p>NOME:</p>
+                        <h1 id='nomePer'>{nome}</h1>
+                    </span>
+                    <span>
+                        <p>RAÇA:</p>
+                        <h4 id='racaPer'>{raca}</h4>
+                    </span>
+                    <span>
+                        <p>CLASSE:</p>
+                        <h4 id='classePer'>{classe}</h4>
+                    </span>
                 </div>
                 <img id='origemPer' src={origem} alt="origem personagem"/>
             </div>            
             <div className='nivelPerDiv'>
+                <p>NÍVEL:</p>
                 <h2> {nivelPer} </h2>
             </div>
             <div className='statusPer'>
-                <span id='hp'>{vidaPer}</span>
-                <span id='def'>{defesaPer}</span>
-                <span id='mana'>{manaPer}</span>
+                <div><p>VIDA</p><span id='hp'>{vidaPer}</span></div>
+                <div><p>DEFESA:</p><span id='def'>{defesaPer}</span></div>
+                <div><p>MANA:</p><span id='mana'>{manaPer}</span></div>
             </div>
             <div className='adicionalPer'>
                 <p id='historiaPer'><b>HISTÓRIA</b><br/>{historiaPers}</p>

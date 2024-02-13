@@ -108,22 +108,30 @@
     letter-spacing: 0.3em;
     color: rgb(160, 85, 24);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: stretch;
+}
+
+.nivelPerDiv h2{
+    margin-top: -10px;
+    flex: 1;
 }
 
 .statusPer{
     grid-area: status;
-    min-height: 50px;
+    min-height: 60px;
     display: flex;
     align-items: stretch;
     justify-content: space-evenly;
+    text-align: center;
 }
 #hp, #def, #mana{
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    min-width: 26%;
+    min-width: 65px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,14 +153,23 @@
     background-image: url(./assets/mana.svg);
 }
 
+
+.infosPerNome p, .nivelPerDiv p, .statusPer p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.6em;
+    letter-spacing: 0em;
+    color: black;
+}
+
 .adicionalPer{    
     margin-top: 10px;
     margin-right: 20px;
     grid-area: back;
-    max-height: 180px;    
+    max-height: 150px;    
     max-width: 100%;
     display: flex;
-    align-items: stretch;    
+    align-items: stretch;      
+    padding-bottom: 10px;  
 }
 
 #historiaPer{    
@@ -180,13 +197,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 2em;
+    font-size: 1.5em;
     color: aliceblue;
     border-radius: 5px;
 }
 
 .atributosPer p{
-    font-size: 0.3em ;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.4em ;
 }
 
 #con{    
