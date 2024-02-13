@@ -132,12 +132,12 @@ function Grupo(props){
                 <span id='mana'>{manaPer}</span>
             </div>
             <div className='adicionalPer'>
-                <p id='historiaPer'>{historiaPers}</p>
+                <p id='historiaPer'><b>HISTÓRIA</b><br/>{historiaPers}</p>
                 <div className='atributosPer'>
-                    <span>C</span>
-                    <span>F</span>
-                    <span>A</span>
-                    <span>S</span>
+                    <span id='con'><p>CONST.</p>{atrConst}</span>
+                    <span id='for'><p>FORÇA</p>{atrForca}</span>
+                    <span id='agi'><p>AGIL.</p>{atrAgilidade}</span>
+                    <span id='sab'><p>SABER</p>{atrSaber}</span>
                 </div>
             </div>
         </div>

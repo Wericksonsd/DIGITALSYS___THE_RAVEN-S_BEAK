@@ -64,7 +64,7 @@
     "imgP back back"
     "imgP back back"
     "imgP back back"
-    "imgP back back"
+    "imgP back back"    
     "imgP back back"
     ;
 }
@@ -72,12 +72,14 @@
 #imgPer{
     grid-area: imgP;
     max-height: 290px;
+    max-width: 115px;
     margin-top: auto;
     margin-bottom: auto;
     padding-left: 15px;
 }
 
 .infosPer{
+    margin-top: 15px;
     grid-area: nome;
     display: flex;
     align-items: stretch;
@@ -93,11 +95,11 @@
 }
 
 #origemPer{
-    width: 60px;
+    max-width: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 12px;
+    padding-right: 18px;
 }
 
 .nivelPerDiv{
@@ -112,6 +114,7 @@
 
 .statusPer{
     grid-area: status;
+    min-height: 50px;
     display: flex;
     align-items: stretch;
     justify-content: space-evenly;
@@ -120,7 +123,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    width: 26%;
+    min-width: 26%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -145,26 +148,59 @@
 .adicionalPer{    
     margin-top: 10px;
     margin-right: 20px;
-    padding-top: 10px;
     grid-area: back;
+    max-height: 180px;    
+    max-width: 100%;
     display: flex;
     align-items: stretch;    
 }
 
-#historiaPer{
+#historiaPer{    
     flex: 1;
-    background-color: rgb(42, 42, 122);
-    padding: 5px;
     max-height: 100%;
-    overflow: auto;
+    padding: 5px;
+    overflow-y: auto;
+    -ms-overflow-style: none;
     text-align: center;
 }
 
+#historiaPer::-webkit-scrollbar{
+    display: none;
+}
+
 .atributosPer{
-    display:flex;
+    display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     min-width: 40px;
-    text-align: center;
-    background-color: chocolate;
+}
+
+#con, #for, #agi, #sab{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.atributosPer p{
+    font-size: 0.3em ;
+}
+
+#con{    
+    background-color: rgb(231, 30, 16);
+}
+
+#for{    
+    background-color: rgb(196, 109, 10);
+}
+
+#agi{    
+    background-color: rgb(81, 184, 22);
+}
+
+#sab{    
+    background-color: rgb(25, 105, 197);
 }
