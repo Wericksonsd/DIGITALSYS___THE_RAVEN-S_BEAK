@@ -50,9 +50,9 @@
 }
 
 #cardPer{
-    width: 320px;
-    height: 390px;
-    background-color: blue;
+    width: 390px;
+    height: 410px;
+    background-image: url(./assets/fundoPapiro.png);
     margin: 45px;
     display: grid;
     grid-template-areas:
@@ -71,7 +71,10 @@
 
 #imgPer{
     grid-area: imgP;
-    background-color: aquamarine;
+    max-height: 290px;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left: 15px;
 }
 
 .infosPer{
@@ -82,26 +85,26 @@
 
 .infosPerNome{
     flex: 1;
-    background-color: rgb(75, 10, 8);
+    padding-left: 15px;
+    font-family: "Protest Revolution", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
 #origemPer{
-    width: 40px;
-    background-color: brown;
+    width: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-right: 8px;
+    padding-right: 12px;
 }
 
 .nivelPerDiv{
     grid-area: nivel;
-    color: rgb(228, 151, 35);
+    font-size: 1.2em;
     letter-spacing: 0.3em;
-    background-color: bisque;
+    color: rgb(160, 85, 24);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -109,19 +112,51 @@
 
 .statusPer{
     grid-area: status;
-    background-color: blueviolet;
-}
-
-.adicionalPer{
-    grid-area: back;
     display: flex;
     align-items: stretch;
+    justify-content: space-evenly;
+}
+#hp, #def, #mana{
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 26%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 600;
+    color: aliceblue;
+}
+
+#hp{
+    background-image: url(./assets/vida.svg);
+    
+}
+
+#def{
+    background-image: url(./assets/def.svg);
+}
+
+#mana{
+    background-image: url(./assets/mana.svg);
+}
+
+.adicionalPer{    
+    margin-top: 10px;
+    margin-right: 20px;
+    padding-top: 10px;
+    grid-area: back;
+    display: flex;
+    align-items: stretch;    
 }
 
 #historiaPer{
     flex: 1;
     background-color: rgb(42, 42, 122);
     padding: 5px;
+    max-height: 100%;
+    overflow: auto;
     text-align: center;
 }
 

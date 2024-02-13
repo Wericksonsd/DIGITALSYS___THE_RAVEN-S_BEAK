@@ -5,10 +5,15 @@ import Termina from './assets/brasoesOrigem/Termina.svg'
 import Viento from './assets/brasoesOrigem/Vientto.svg'
 import Volttan from './assets/brasoesOrigem/Volttan.svg'
 import Unknown from './assets/brasoesOrigem/Unknown.svg'
+import Guerreiro from './assets/Personagens/Guerreiro.svg'
+import Mago from './assets/Personagens/Mago.svg'
+import Arqueiro from './assets/Personagens/Arqueiro.svg'
+import Paladino from './assets/Personagens/Paladino.svg'
 
 function Grupo(props){
 
-    const [personagem, setPersonagem] = useState([]);
+    const [personagem, setPersonagem] = useState([]);    
+    const [imgP, setImgP] = useState(imagemPersonagem(props.imgPer));
     const [nome, setNome] = useState(props.nome);
     const [raca, setRaca] = useState(props.raca);
     const [classe, setClasse] = useState(props.classe);
@@ -23,6 +28,35 @@ function Grupo(props){
     const [atrAgilidade, setAtrAgilidade] = useState(props.a);
     const [atrSaber, setAtrSaber] = useState(props.s);    
     const [dinPer, setDinPer] = useState(0);
+
+    function imagemPersonagem(i) {
+
+        let imgp;
+
+        switch(i){
+
+            case 1:
+                imgp = Guerreiro;
+            break;
+
+            case 2:
+                imgp = Mago;
+            break;
+
+            case 3:
+                imgp = Paladino;
+            break;
+
+            case 4:
+                imgp = Arqueiro;
+
+            default:
+                imgp = Arqueiro;
+            break;
+        }
+
+        return imgp;
+    }
 
     function origemPersonagem(i) {
 
@@ -80,10 +114,10 @@ function Grupo(props){
 
     return (
         <div id='cardPer'>
-            <img id='imgPer' src='' alt="personagem" />
+            <img id='imgPer' src={imgP} alt="personagem" />
             <div className='infosPer'>
                 <div className='infosPerNome'>
-                    <h2 id='nomePer'>{nome}</h2>
+                    <h1 id='nomePer'>{nome}</h1>
                     <h4 id='racaPer'>{raca}</h4>
                     <h4 id='classePer'>{classe}</h4>
                 </div>
@@ -93,12 +127,12 @@ function Grupo(props){
                 <h2> {nivelPer} </h2>
             </div>
             <div className='statusPer'>
-                <img src="" alt="hp" />
-                <img src="" alt="def" />
-                <img src="" alt="mana" />
+                <span id='hp'>{vidaPer}</span>
+                <span id='def'>{defesaPer}</span>
+                <span id='mana'>{manaPer}</span>
             </div>
             <div className='adicionalPer'>
-                <p id='historiaPer'>dfgdfgfdg</p>
+                <p id='historiaPer'>{historiaPers}</p>
                 <div className='atributosPer'>
                     <span>C</span>
                     <span>F</span>
